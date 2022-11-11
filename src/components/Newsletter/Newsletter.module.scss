@@ -1,0 +1,55 @@
+.wrapper {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fcf5f5;
+
+  h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .inp {
+    width: 50%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid lightgrey;
+    background-color: #fff;
+    border: 1px solid lightgrey;
+    input {
+      flex: 10;
+      height: 100%;
+      border: none;
+      outline: none;
+      padding: 10px 12px;
+    }
+    button {
+      flex: 1;
+      height: 100%;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      border-left: 1px solid lightgrey;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      &:active {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

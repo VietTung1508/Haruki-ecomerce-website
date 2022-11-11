@@ -1,0 +1,75 @@
+.container {
+  height: 60px;
+  .wrapper {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left {
+      flex: 1;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      margin-left: 10px;
+
+      select {
+        font-size: 14px;
+        padding: 2px;
+        border: none;
+        outline: none;
+      }
+
+      .search {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+        border: 1px solid lightgrey;
+
+        input {
+          width: 85%;
+          border: none;
+          outline: none;
+          font-size: 0.8rem;
+        }
+
+        .icon {
+          border-left: 1px solid lightgrey;
+          padding-left: 7px;
+          cursor: pointer;
+          font-size: 15px;
+          color: rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+
+    .center {
+      flex: 2;
+      text-align: center;
+      h1 {
+        cursor: pointer;
+        color: rgb(0, 0, 0);
+      }
+    }
+
+    .right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex: 1;
+      gap: 25px;
+      margin-right: 20px;
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+      .cart {
+        cursor: pointer;
+      }
+    }
+  }
+}

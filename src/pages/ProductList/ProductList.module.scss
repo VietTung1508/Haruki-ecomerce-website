@@ -1,0 +1,32 @@
+.wrap {
+  .title {
+    padding-left: 20px;
+    margin: 20px 0;
+  }
+  .filterWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    select {
+      padding: 6px 8px;
+      margin-left: 10px;
+    }
+    .left {
+      display: flex;
+      align-items: center;
+      h3 {
+        font-weight: 500;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      h3 {
+        font-weight: 500;
+      }
+    }
+  }
+}
