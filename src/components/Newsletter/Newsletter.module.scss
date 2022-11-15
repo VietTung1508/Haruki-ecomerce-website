@@ -5,16 +5,25 @@
   justify-content: center;
   flex-direction: column;
   background-color: #fcf5f5;
+  @media only screen and (max-width: 380px) {
+    height: 40vh;
+  }
 
   h1 {
     font-size: 60px;
     margin-bottom: 20px;
+    @media only screen and (max-width: 380px) {
+      font-size: 40px;
+    }
   }
 
   p {
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 20px;
+    @media only screen and (max-width: 380px) {
+      text-align: center;
+    }
   }
 
   .inp {
@@ -26,6 +35,9 @@
     border: 1px solid lightgrey;
     background-color: #fff;
     border: 1px solid lightgrey;
+    @media only screen and (max-width: 380px) {
+      width: 80%;
+    }
     input {
       flex: 10;
       height: 100%;

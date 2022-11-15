@@ -1,10 +1,13 @@
 .container {
   height: 60px;
   .wrapper {
-    padding: 10px 0;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media only screen and (max-width: 380px) {
+      padding: 15px 5px;
+    }
     .left {
       flex: 1;
       display: flex;
@@ -12,13 +15,15 @@
       align-items: center;
       gap: 10px;
       position: relative;
-      margin-left: 10px;
 
       select {
         font-size: 14px;
         padding: 2px;
         border: none;
         outline: none;
+        @media only screen and (max-width: 380px) {
+          display: none;
+        }
       }
 
       .search {
@@ -28,12 +33,18 @@
         justify-content: space-between;
         padding: 8px;
         border: 1px solid lightgrey;
+        @media only screen and (max-width: 380px) {
+          width: 80px;
+        }
 
         input {
           width: 85%;
           border: none;
           outline: none;
           font-size: 0.8rem;
+          @media only screen and (max-width: 380px) {
+            width: 50px;
+          }
         }
 
         .icon {
@@ -42,6 +53,9 @@
           cursor: pointer;
           font-size: 15px;
           color: rgba(0, 0, 0, 0.5);
+          @media only screen and (max-width: 380px) {
+            display: none;
+          }
         }
       }
     }
@@ -52,6 +66,9 @@
       h1 {
         cursor: pointer;
         color: rgb(0, 0, 0);
+        @media only screen and (max-width: 380px) {
+          font-size: 26px;
+        }
       }
     }
 
@@ -61,14 +78,30 @@
       align-items: center;
       flex: 1;
       gap: 25px;
-      margin-right: 20px;
+      @media only screen and (max-width: 380px) {
+        justify-content: center;
+        gap: 8px;
+        flex: 2;
+      }
       button {
         background-color: transparent;
         border: none;
         cursor: pointer;
+        @media only screen and (max-width: 380px) {
+          font-size: 12px;
+        }
       }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
       .cart {
         cursor: pointer;
+        @media only screen and (max-width: 380px) {
+          transform: scale(0.9);
+        }
       }
     }
   }

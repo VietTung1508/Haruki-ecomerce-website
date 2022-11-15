@@ -5,10 +5,13 @@ import { faSearch, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { Badge } from "@mui/material";
 import { ShoppingCart } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const cx = className.bind(styled);
 
 function Navbar() {
+  const cartAmount = useSelector((state) => state.cart);
+
   return (
     <div className={cx("container")}>
       <div className={cx("wrapper")}>
@@ -41,8 +44,10 @@ function Navbar() {
             </Link>
           </div>
           <div className={cx("cart")}>
-            <Badge badgeContent={3} color="primary">
-              <ShoppingCart />
+            <Badge badgeContent={cartAmount.length} color="primary">
+              <Link to="/cart">
+                <ShoppingCart />
+              </Link>
             </Badge>
           </div>
         </div>

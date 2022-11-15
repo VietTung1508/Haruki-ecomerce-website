@@ -18,6 +18,9 @@
     top: 10px;
     left: 10px;
     cursor: pointer;
+    @media only screen and (max-width: 380px) {
+      transform: scale(1.5);
+    }
     a {
       color: black;
     }
@@ -27,6 +30,9 @@
     width: 30%;
     padding: 20px;
     background-color: #fff;
+    @media only screen and (max-width: 380px) {
+      width: 75%;
+    }
 
     b {
       cursor: pointer;

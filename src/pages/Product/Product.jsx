@@ -6,32 +6,29 @@ import Newsletter from "../../components/Newsletter/Newsletter";
 import Announcement from "../../components/Announcement/Announcement";
 import { Add, Remove } from "@mui/icons-material";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const cx = className.bind(style);
 
 function Product() {
   const [quanlity, setQuanlity] = useState(1);
 
+  const product = useSelector((state) => state.setProduct.product);
+
+  console.log(product);
+
   return (
     <div className={cx("wrapper")}>
-      <Navbar />
       <Announcement />
+      <Navbar />
       <div className={cx("productContainer")}>
         <div className={cx("imgContainer")}>
-          <img src="https://cdn.shopify.com/s/files/1/0473/6965/0340/products/8c9629c8df6eb1a54500e06f5bf4c5cb8aaf0fb8_I026467.0UG.FH.03_Carhartt_WIP_Detroit_Jacket_Pale_Spearmint_Pale_Spearmint_om_1_768x768.jpg?v=1660247805" />
+          <img src={product.img} />
         </div>
         <div className={cx("infoContainer")}>
-          <h1>Carhartt Detroit Jacket</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum
-            dignissimos possimus quam quis molestiae eveniet nam amet vitae
-            cumque explicabo id debitis quibusdam officiis itaque rerum deleniti
-            iste, excepturi illo! Dolore omnis, eaque nobis cumque assumenda eos
-            provident unde minus, eligendi delectus id repellat, ratione
-            adipisci reprehenderit voluptates voluptate saepe doloremque
-            suscipit ipsam velit optio? Quisquam illum aspernatur iure placeat!
-          </p>
-          <span className={cx("price")}>20.000 Ұ</span>
+          <h1>{product.name}</h1>
+          <p>{product.des}</p>
+          <span className={cx("price")}>{product.price}</span>
           <div className={cx("filterContainer")}>
             <div className={cx("filter")}>
               <span>Size:</span>

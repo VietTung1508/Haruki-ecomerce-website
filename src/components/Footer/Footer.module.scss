@@ -2,7 +2,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 40vh;
+  @media only screen and (max-width: 380px) {
+    flex-direction: column;
+  }
 
   .left {
     flex: 1;
@@ -39,6 +41,9 @@
     flex: 1;
     padding: 20px;
     height: 100%;
+    @media only screen and (max-width: 380px) {
+      display: none;
+    }
 
     h3 {
       margin-top: 15px;
