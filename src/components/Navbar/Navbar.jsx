@@ -6,11 +6,12 @@ import { Badge } from "@mui/material";
 import { ShoppingCart } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
 const cx = className.bind(styled);
 
 function Navbar() {
-  const cartAmount = useSelector((state) => state.cart);
+  const cartAmount = useSelector((state) => state.cart.products);
 
   return (
     <div className={cx("container")}>

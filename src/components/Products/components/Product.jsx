@@ -21,7 +21,6 @@ function Product({ item }) {
   };
 
   const addToCart = () => {
-    message.success(`Successfully Add 1-${item.name}`, [2000]);
     dispatch(cartSlice.actions.addProduct(item));
   };
 

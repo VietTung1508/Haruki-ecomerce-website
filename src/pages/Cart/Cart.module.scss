@@ -110,17 +110,32 @@
           justify-content: space-between;
           margin-top: 20px;
           border-bottom: 1px solid lightgrey;
+          position: relative;
           @media only screen and (max-width: 380px) {
             flex-direction: column;
             gap: 20px;
           }
+
+          .deleteBtn {
+            position: absolute;
+            top: 0px;
+            right: 20px;
+            button {
+              background-color: transparent;
+              border: none;
+              outline: none;
+              font-size: 20px;
+              cursor: pointer;
+            }
+          }
+
           .productDetail {
             flex: 2;
             display: flex;
 
             img {
-              width: 200px;
-              height: 150px;
+              width: 300px;
+              height: 300px;
               object-fit: cover;
             }
 
@@ -128,8 +143,8 @@
               padding: 20px;
               display: flex;
               flex-direction: column;
-              justify-content: space-around;
-              gap: 10px;
+              justify-content: center;
+              gap: 20px;
 
               .colorContainer {
                 display: flex;
@@ -201,6 +216,7 @@
         flex: 1;
         border: 3px solid lightgrey;
         display: flex;
+        height: 350px;
         flex-direction: column;
 
         h1 {

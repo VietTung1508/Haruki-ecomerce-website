@@ -5,6 +5,7 @@ import Categories from "../../components/Categories/Categories.jsx";
 import Products from "../../components/Products/Products.jsx";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import Footer from "../../components/Footer/Footer";
+import Commerce from "../../components/Commerce/Commerce";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <Navbar />
       <Slider />
       <Categories />
+      <Commerce />
       <Products />
       <Newsletter />
       <Footer />
