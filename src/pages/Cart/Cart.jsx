@@ -25,6 +25,14 @@ function Cart() {
     dispatch(cartSlice.actions.deleteProduct(i));
   };
 
+  const handleDecrease = (item) => {
+    dispatch(cartSlice.actions.decreaseQuan(item));
+  };
+
+  const handleIncrese = (item) => {
+    dispatch(cartSlice.actions.increaseQuan(item));
+  };
+
   return (
     <div className={cx("wrapper")}>
       <Announcement />
@@ -57,7 +65,7 @@ function Cart() {
             <div className={cx("info")}>
               <div className={cx("products")}>
                 {cart.map((item, i) => (
-                  <div className={cx("product")} key={i}>
+                  <div data-aos="fade-right" className={cx("product")} key={i}>
                     <div className={cx("deleteBtn")}>
                       <button onClick={() => handleDelete(i)}>
                         <FontAwesomeIcon icon={faXmark} />
@@ -83,11 +91,11 @@ function Cart() {
                     </div>
                     <div className={cx("priceDetail")}>
                       <div className={cx("AmountContainer")}>
-                        <button>
+                        <button onClick={() => handleDecrease(item)}>
                           <Remove />
                         </button>
                         <span>{item.quan}</span>
-                        <button>
+                        <button onClick={() => handleIncrese(item)}>
                           <Add />
                         </button>
                       </div>

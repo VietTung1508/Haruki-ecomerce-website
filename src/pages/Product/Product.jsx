@@ -18,8 +18,6 @@ function Product() {
 
   const product = useSelector((state) => state.setProduct.product);
 
-  console.log(product);
-
   const addProduct = () => {
     dispatch(cartSlice.actions.addProduct({ ...product, quan: quanlity }));
   };

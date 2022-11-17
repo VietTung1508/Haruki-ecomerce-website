@@ -1,10 +1,121 @@
 .container {
   height: 60px;
-  // position: fixed;
-  // z-index: 999;
-  // background-color: #fff;
-  // width: 100%;
-  // top: 0;
+  .wrapper {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media only screen and (max-width: 380px) {
+      padding: 15px 5px;
+    }
+    .left {
+      flex: 1;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+
+      select {
+        font-size: 14px;
+        padding: 2px;
+        border: none;
+        outline: none;
+        @media only screen and (max-width: 380px) {
+          display: none;
+        }
+      }
+
+      .search {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+        border: 1px solid lightgrey;
+        @media only screen and (max-width: 380px) {
+          width: 80px;
+        }
+
+        input {
+          width: 85%;
+          border: none;
+          outline: none;
+          font-size: 0.8rem;
+          background-color: transparent;
+          @media only screen and (max-width: 380px) {
+            width: 50px;
+          }
+        }
+
+        .icon {
+          border-left: 1px solid lightgrey;
+          padding-left: 7px;
+          cursor: pointer;
+          font-size: 15px;
+          color: rgba(0, 0, 0, 0.5);
+          @media only screen and (max-width: 380px) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .center {
+      flex: 2;
+      text-align: center;
+      h1 {
+        font-weight: 700;
+        cursor: pointer;
+        color: rgb(0, 0, 0);
+        @media only screen and (max-width: 380px) {
+          font-size: 26px;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex: 1;
+      gap: 25px;
+      @media only screen and (max-width: 380px) {
+        justify-content: center;
+        gap: 8px;
+        flex: 2;
+      }
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        @media only screen and (max-width: 380px) {
+          font-size: 12px;
+        }
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      .cart {
+        cursor: pointer;
+        @media only screen and (max-width: 380px) {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+}
+
+.containerFixed {
+  height: 60px;
+  position: fixed;
+  z-index: 999;
+  background-color: #fff;
+  width: 100%;
+  top: 0;
 
   .wrapper {
     padding: 10px 20px;
@@ -48,6 +159,7 @@
           border: none;
           outline: none;
           font-size: 0.8rem;
+          background-color: transparent;
           @media only screen and (max-width: 380px) {
             width: 50px;
           }

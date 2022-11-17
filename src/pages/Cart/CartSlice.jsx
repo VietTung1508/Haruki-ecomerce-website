@@ -13,12 +13,28 @@ export const cartSlice = createSlice({
       if (isExist) {
         state.products.map((item) =>
           item.id === action.payload.id
-            ? { ...item, quan: (item.quan += 1) }
+            ? { ...item, quan: (item.quan += action.payload.quan) }
             : { ...item }
         );
       } else {
         state.products.push(action.payload);
       }
+    },
+
+    increaseQuan: (state, action) => {
+      state.products.map((item) =>
+        item.id === action.payload.id
+          ? { ...item, quan: (item.quan += 1) }
+          : { ...item }
+      );
+    },
+
+    decreaseQuan: (state, action) => {
+      state.products.map((item) =>
+        item.id === action.payload.id
+          ? { ...item, quan: item.quan > 1 ? (item.quan -= 1) : item.quan }
+          : { ...item }
+      );
     },
 
     deleteProduct: (state, action) => {

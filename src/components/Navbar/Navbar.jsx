@@ -11,10 +11,21 @@ import { useState } from "react";
 const cx = className.bind(styled);
 
 function Navbar() {
+  const [fix, setFixed] = useState(false);
   const cartAmount = useSelector((state) => state.cart.products);
 
+  const setFix = () => {
+    if (window.scrollY > 200) {
+      setFixed(true);
+    } else {
+      setFixed(false);
+    }
+  };
+
+  window.addEventListener("scroll", setFix);
+
   return (
-    <div className={cx("container")}>
+    <div className={cx(fix ? "containerFixed" : "container")}>
       <div className={cx("wrapper")}>
         <div className={cx("left")}>
           <select>
