@@ -81,5 +81,8 @@
     width: 100%;
     font-size: 13px;
     opacity: 0;
+    @media only screen and (max-width: 380px) {
+      opacity: 1;
+    }
   }
 }

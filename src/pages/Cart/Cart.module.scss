@@ -132,6 +132,14 @@
           .productDetail {
             flex: 2;
             display: flex;
+            @media only screen and (max-width: 380px) {
+              flex-direction: column;
+              align-items: center;
+              gap: 20px;
+              span {
+                font-size: 20px;
+              }
+            }
 
             img {
               width: 300px;

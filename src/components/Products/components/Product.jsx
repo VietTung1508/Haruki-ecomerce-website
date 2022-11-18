@@ -41,8 +41,8 @@ function Product({ item }) {
         </div>
       </div>
       <div className={cx("detail")}>
+        <h2>{item.name}</h2>
         <h2>{item.price} ¥</h2>
-        <h2>{item.size}</h2>
       </div>
     </div>
   );

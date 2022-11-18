@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 import { sliderItems } from "../../data";
+import { Link } from "react-router-dom";
 
 const cx = className.bind(styled);
 
@@ -42,11 +43,19 @@ function Slider() {
           >
             <div className={cx("imgContainer")}>
               <img src={item.img} />
+              <span
+                className={cx("circle")}
+                style={{
+                  backgroundColor: item.circle,
+                }}
+              />
             </div>
             <div className={cx("infoContainer")}>
               <h1>{item.title}</h1>
               <p>{item.desc}</p>
-              <button>Shop Now</button>
+              <Link to="/products">
+                <button>Shop Now</button>
+              </Link>
             </div>
           </div>
         ))}

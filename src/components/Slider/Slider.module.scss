@@ -17,14 +17,30 @@
       height: 100vh;
       display: flex;
       align-items: center;
+      position: relative;
+
       transition: all 1.2s ease;
 
       .imgContainer {
         height: 100%;
         flex: 1;
+        position: relative;
+
+        .circle {
+          width: 400px;
+          height: 400px;
+          position: absolute;
+          top: 20%;
+          left: 15%;
+          border-radius: 50%;
+          z-index: 5;
+          opacity: 0.8;
+        }
 
         img {
-          height: 80%;
+          height: 90%;
+          position: relative;
+          z-index: 10;
         }
       }
 

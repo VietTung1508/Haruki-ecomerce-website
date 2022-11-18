@@ -38,10 +38,7 @@ function Product() {
             <div className={cx("filter")}>
               <span>Size:</span>
               <select>
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
+                <option>{product.size}</option>
               </select>
             </div>
             <div className={cx("filter")}>

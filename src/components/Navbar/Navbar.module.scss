@@ -34,7 +34,7 @@
         padding: 8px;
         border: 1px solid lightgrey;
         @media only screen and (max-width: 380px) {
-          width: 80px;
+          width: 110px;
         }
 
         input {
@@ -85,6 +85,22 @@
         gap: 8px;
         flex: 2;
       }
+
+      .deskUser {
+        display: none;
+        @media only screen and (max-width: 380px) {
+          display: unset;
+          font-size: 20px;
+          margin-right: 20px;
+          margin-bottom: 4px;
+        }
+      }
+
+      .user {
+        @media only screen and (max-width: 380px) {
+          display: none;
+        }
+      }
       button {
         background-color: transparent;
         border: none;
@@ -102,7 +118,7 @@
       .cart {
         cursor: pointer;
         @media only screen and (max-width: 380px) {
-          transform: scale(0.9);
+          transform: scale(1.1);
         }
       }
     }
@@ -151,7 +167,7 @@
         padding: 8px;
         border: 1px solid lightgrey;
         @media only screen and (max-width: 380px) {
-          width: 80px;
+          width: 110px;
         }
 
         input {
@@ -202,6 +218,23 @@
         gap: 8px;
         flex: 2;
       }
+
+      .deskUser {
+        display: none;
+        @media only screen and (max-width: 380px) {
+          display: unset;
+          font-size: 20px;
+          margin-right: 20px;
+          margin-bottom: 4px;
+        }
+      }
+
+      .user {
+        @media only screen and (max-width: 380px) {
+          display: none;
+        }
+      }
+
       button {
         background-color: transparent;
         border: none;
@@ -219,7 +252,7 @@
       .cart {
         cursor: pointer;
         @media only screen and (max-width: 380px) {
-          transform: scale(0.9);
+          transform: scale(1.1);
         }
       }
     }

@@ -7,6 +7,7 @@ import { ShoppingCart } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
 
 const cx = className.bind(styled);
 
@@ -45,14 +46,19 @@ function Navbar() {
           </Link>
         </div>
         <div className={cx("right")}>
-          <div>
+          <div className={cx("user")}>
             <Link to="/register">
               <button>REGISTER</button>
             </Link>
           </div>
           <div>
-            <Link to="/login">
+            <Link to="/login" className={cx("user")}>
               <button>SIGN IN</button>
+            </Link>
+          </div>
+          <div className={cx("deskUser")}>
+            <Link to="/login">
+              <FontAwesomeIcon icon={faUser} />
             </Link>
           </div>
           <div className={cx("cart")}>
