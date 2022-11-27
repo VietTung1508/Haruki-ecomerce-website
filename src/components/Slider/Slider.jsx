@@ -38,11 +38,12 @@ function Slider() {
             className={cx("slide")}
             style={{
               backgroundColor: `${item.bg}`,
+
               transform: `translateX(-${slideIndex * 100}%)`,
             }}
           >
             <div className={cx("imgContainer")}>
-              <img src={item.img} />
+              <img src={item.img} alt="" />
               <span
                 className={cx("circle")}
                 style={{
