@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { productSlice } from "./ProductSlice";
 import { cartSlice } from "../../../pages/Cart/CartSlice";
-import { message } from "antd";
 
 const cx = className.bind(style);
 
@@ -26,7 +25,7 @@ function Product({ item }) {
 
   return (
     <div className={cx("wrapper")}>
-      <img src={item.img} />
+      <img src={item.img} alt="" />
       <div className={cx("icons")}>
         <div className={cx("icon")} onClick={addToCart}>
           <ShoppingCartOutlined />

@@ -1,7 +1,7 @@
 import styled from "./Navbar.module.scss";
 import className from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Badge } from "@mui/material";
 import { ShoppingCart } from "@mui/icons-material";
 import { Link } from "react-router-dom";

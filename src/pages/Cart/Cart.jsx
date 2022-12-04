@@ -34,110 +34,118 @@ function Cart() {
   };
 
   return (
-    <div className={cx("wrapper")}>
+    <>
       <Announcement />
       <Navbar />
-      <div className={cx("content")}>
-        <h1>YOUR BAG</h1>
-        <div className={cx("actions")}>
-          <Link to="/products">
-            <button className={cx("shop")}>CONTINUE SHOPPING</button>
-          </Link>
-          <div>
-            <span>Shopping Bag({cart.length})</span>
-            <span>Your Wishlist(0)</span>
-          </div>
-          <button className={cx("checkout")}>CHECKOUT NOW</button>
-        </div>
+      <div className="containerG">
+        <div className={cx("wrapper")}>
+          <div className={cx("content")}>
+            <h1>YOUR BAG</h1>
+            <div className={cx("actions")}>
+              <Link to="/products">
+                <button className={cx("shop")}>CONTINUE SHOPPING</button>
+              </Link>
+              <div>
+                <span>Shopping Bag({cart.length})</span>
+                <span>Your Wishlist(0)</span>
+              </div>
+              <button className={cx("checkout")}>CHECKOUT NOW</button>
+            </div>
 
-        {isEmpty && (
-          <div className={cx("emptyCart")}>
-            <img src="https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-4816550-4004141.png" />
-            <h2>Oops! Your cart is empty!</h2>
-            <p>Looks like you haven't added anything to your cart yet</p>
-            <Link to="/products">
-              <button>SHOP NOW</button>
-            </Link>
-          </div>
-        )}
-        {!isEmpty && (
-          <div className={cx("bag")}>
-            <div className={cx("info")}>
-              <div className={cx("products")}>
-                {cart.map((item, i) => (
-                  <div data-aos="fade-right" className={cx("product")} key={i}>
-                    <div className={cx("deleteBtn")}>
-                      <button onClick={() => handleDelete(i)}>
-                        <FontAwesomeIcon icon={faXmark} />
-                      </button>
-                    </div>
-                    <div className={cx("productDetail")}>
-                      <img src={item.img} />
-                      <div className={cx("detail")}>
-                        <span>
-                          <b>Product:</b> {item.name}
-                        </span>
-                        <span>
-                          <b>ID:</b>0234425322129
-                        </span>
-                        <span>
-                          <b>Color:</b>
-                          {item.color}
-                        </span>
-                        <span>
-                          <b>Size:</b> {item.size}
-                        </span>
+            {isEmpty && (
+              <div className={cx("emptyCart")}>
+                <img src="./assets/images/emptyCart.png" alt="" />
+                <h2>Oops! Your cart is empty!</h2>
+                <p>Looks like you haven't added anything to your cart yet</p>
+                <Link to="/products">
+                  <button>SHOP NOW</button>
+                </Link>
+              </div>
+            )}
+            {!isEmpty && (
+              <div className={cx("bag")}>
+                <div className={cx("info")}>
+                  <div className={cx("products")}>
+                    {cart.map((item, i) => (
+                      <div
+                        data-aos="fade-right"
+                        className={cx("product")}
+                        key={i}
+                      >
+                        <div className={cx("deleteBtn")}>
+                          <button onClick={() => handleDelete(i)}>
+                            <FontAwesomeIcon icon={faXmark} />
+                          </button>
+                        </div>
+                        <div className={cx("productDetail")}>
+                          <img src={item.img} alt="" />
+                          <div className={cx("detail")}>
+                            <span>
+                              <b>Product:</b> {item.name}
+                            </span>
+                            <span>
+                              <b>ID:</b>0234425322129
+                            </span>
+                            <span>
+                              <b>Color:</b>
+                              {item.color}
+                            </span>
+                            <span>
+                              <b>Size:</b> {item.size}
+                            </span>
+                          </div>
+                        </div>
+                        <div className={cx("priceDetail")}>
+                          <div className={cx("AmountContainer")}>
+                            <button onClick={() => handleDecrease(item)}>
+                              <Remove />
+                            </button>
+                            <span>{item.quan}</span>
+                            <button onClick={() => handleIncrese(item)}>
+                              <Add />
+                            </button>
+                          </div>
+                          <div className={cx("priceContainer")}>
+                            <span>{item.price * item.quan} ¥</span>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div className={cx("priceDetail")}>
-                      <div className={cx("AmountContainer")}>
-                        <button onClick={() => handleDecrease(item)}>
-                          <Remove />
-                        </button>
-                        <span>{item.quan}</span>
-                        <button onClick={() => handleIncrese(item)}>
-                          <Add />
-                        </button>
-                      </div>
-                      <div className={cx("priceContainer")}>
-                        <span>{item.price * item.quan} ¥</span>
-                      </div>
-                    </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+                <div className={cx("summary")}>
+                  <h1>ORDER SUMMARY</h1>
+                  <div className={cx("order")}>
+                    <p>Subtotal:</p>
+                    <span>{totalPrice} ¥</span>
+                  </div>
+                  <div className={cx("order")}>
+                    <p>Estimate Shipping:</p>
+                    <span>2000 ¥</span>
+                  </div>
+                  <div className={cx("order")}>
+                    <p>Discount:</p>
+                    <span>-5000 ¥</span>
+                  </div>
+                  <div className={cx("order")}>
+                    <p
+                      style={{
+                        fontWeight: "600",
+                      }}
+                    >
+                      Total:
+                    </p>
+                    <span>{totalPrice + 2000 - 5000} ¥</span>
+                  </div>
+                  <button>CHECKOUT NOW</button>
+                </div>
               </div>
-            </div>
-            <div className={cx("summary")}>
-              <h1>ORDER SUMMARY</h1>
-              <div className={cx("order")}>
-                <p>Subtotal:</p>
-                <span>{totalPrice} ¥</span>
-              </div>
-              <div className={cx("order")}>
-                <p>Estimate Shipping:</p>
-                <span>2000 ¥</span>
-              </div>
-              <div className={cx("order")}>
-                <p>Discount:</p>
-                <span>-5000 ¥</span>
-              </div>
-              <div className={cx("order")}>
-                <p
-                  style={{
-                    fontWeight: "600",
-                  }}
-                >
-                  Total:
-                </p>
-                <span>{totalPrice + 2000 - 5000} ¥</span>
-              </div>
-              <button>CHECKOUT NOW</button>
-            </div>
+            )}
           </div>
-        )}
+          <Footer />
+        </div>
       </div>
-      <Footer />
-    </div>
+    </>
   );
 }
 

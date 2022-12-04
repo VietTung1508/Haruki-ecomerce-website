@@ -1,7 +1,7 @@
 import styled from "./Announcement.module.scss";
 import className from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMarker, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 const cx = className.bind(styled);

@@ -43,7 +43,7 @@ function Slider() {
             }}
           >
             <div className={cx("imgContainer")}>
-              <img src={item.img} alt="" />
+              <img src={item.img} alt="np" />
               <span
                 className={cx("circle")}
                 style={{

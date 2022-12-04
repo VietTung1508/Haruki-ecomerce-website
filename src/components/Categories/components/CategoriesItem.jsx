@@ -7,7 +7,7 @@ const cx = className.bind(style);
 function CategoriesItem({ item }) {
   return (
     <div className={cx("wrapper")}>
-      <img src={item.img} />
+      <img src={item.img} alt="" />
       <div className={cx("info")}>
         <h1>{item.title}</h1>
         <Link to="/products">

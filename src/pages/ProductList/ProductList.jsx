@@ -12,59 +12,58 @@ const cx = className.bind(style);
 
 function ProductList() {
   const [moreProduct, setMoreProduct] = useState(false);
-  const [sort2, setSort2] = useState("Newest");
-
-  const handleSort2 = (e) => {
-    setSort2(e.target.value);
-  };
 
   return (
-    <div className={cx("wrap")}>
+    <>
       <Announcement />
       <Navbar />
-      <h1 className={cx("title")}>Jacket</h1>
-      <div className={cx("filterWrapper")}>
-        <div className={cx("left")}>
-          <h3>Filter Products:</h3>
-          <select>
-            <option>Black</option>
-            <option>Tan</option>
-            <option>Navy</option>
-          </select>
-          <select>
-            <option>XL</option>
-            <option>L</option>
-            <option>M</option>
-            <option>S</option>
-          </select>
-        </div>
-        <div className={cx("right")}>
-          <h3>Sort Products:</h3>
-          <select onChange={handleSort2}>
-            <option value="Newest">Newest</option>
-            <option value="Price">Price</option>
-          </select>
+      <div className="containerG">
+        <div className={cx("wrap")}>
+          <h1 className={cx("title")}>Jacket</h1>
+          <div className={cx("filterWrapper")}>
+            <div className={cx("left")}>
+              <h3>Filter Products:</h3>
+              <select>
+                <option>Black</option>
+                <option>Tan</option>
+                <option>Navy</option>
+              </select>
+              <select>
+                <option>XL</option>
+                <option>L</option>
+                <option>M</option>
+                <option>S</option>
+              </select>
+            </div>
+            <div className={cx("right")}>
+              <h3>Sort Products:</h3>
+              <select>
+                <option value="Newest">Newest</option>
+                <option value="Price">Price</option>
+              </select>
+            </div>
+          </div>
+          <Products />
+          {moreProduct && (
+            <div className={cx("container")}>
+              {products.map((item, i) => (
+                <Product key={i} item={item} />
+              ))}
+            </div>
+          )}
+          <div className={cx("loadMore")}>
+            <button
+              onClick={() => {
+                setMoreProduct(!moreProduct);
+              }}
+            >
+              {moreProduct ? "Hide Product" : "Load Product"}
+            </button>
+          </div>
+          <Footer />
         </div>
       </div>
-      <Products />
-      {moreProduct && (
-        <div className={cx("container")}>
-          {products.map((item, i) => (
-            <Product key={i} item={item} />
-          ))}
-        </div>
-      )}
-      <div className={cx("loadMore")}>
-        <button
-          onClick={() => {
-            setMoreProduct(!moreProduct);
-          }}
-        >
-          {moreProduct ? "Hide Product" : "Load Product"}
-        </button>
-      </div>
-      <Footer />
-    </div>
+    </>
   );
 }
 

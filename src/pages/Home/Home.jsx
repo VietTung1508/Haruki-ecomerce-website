@@ -13,11 +13,13 @@ function Home() {
       <Announcement />
       <Navbar />
       <Slider />
-      <Categories />
-      <Commerce />
-      <Products />
-      <Newsletter />
-      <Footer />
+      <div className="containerG">
+        <Categories />
+        <Commerce />
+        <Products />
+        <Newsletter />
+        <Footer />
+      </div>
     </>
   );
 }

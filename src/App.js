@@ -8,6 +8,7 @@ import Cart from "./pages/Cart/Cart";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import "./App.scss";
 
 function App() {
   useEffect(() => {

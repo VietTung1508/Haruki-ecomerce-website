@@ -84,7 +84,7 @@ function Footer() {
         <div className={cx("ct")}>
           <MailOutline /> <p>haruki@gmail.dev</p>
         </div>
-        <img src="https://i.ibb.co/Qfvn4z6/payment.png" />
+        <img src="https://i.ibb.co/Qfvn4z6/payment.png" alt="" />
       </div>
     </div>
   );

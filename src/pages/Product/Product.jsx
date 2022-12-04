@@ -23,61 +23,65 @@ function Product() {
   };
 
   return (
-    <div className={cx("wrapper")}>
+    <>
       <Announcement />
       <Navbar />
-      <div className={cx("productContainer")}>
-        <div className={cx("imgContainer")}>
-          <img src={product.img} />
-        </div>
-        <div className={cx("infoContainer")}>
-          <h1>{product.name}</h1>
-          <p>{product.des}</p>
-          <span className={cx("price")}>{product.price} ¥</span>
-          <div className={cx("filterContainer")}>
-            <div className={cx("filter")}>
-              <span>Size:</span>
-              <select>
-                <option>{product.size}</option>
-              </select>
+      <div className="containerG">
+        <div className={cx("wrapper")}>
+          <div className={cx("productContainer")}>
+            <div className={cx("imgContainer")}>
+              <img src={product.img} alt="" />
             </div>
-            <div className={cx("filter")}>
-              <span>Color:</span>
-              <div
-                className={cx("color")}
-                style={{ backgroundColor: "tan" }}
-              ></div>
-              <div
-                className={cx("color")}
-                style={{ backgroundColor: "green" }}
-              ></div>
-              <div
-                className={cx("color")}
-                style={{ backgroundColor: "black" }}
-              ></div>
+            <div className={cx("infoContainer")}>
+              <h1>{product.name}</h1>
+              <p>{product.des}</p>
+              <span className={cx("price")}>{product.price} ¥</span>
+              <div className={cx("filterContainer")}>
+                <div className={cx("filter")}>
+                  <span>Size:</span>
+                  <select>
+                    <option>{product.size}</option>
+                  </select>
+                </div>
+                <div className={cx("filter")}>
+                  <span>Color:</span>
+                  <div
+                    className={cx("color")}
+                    style={{ backgroundColor: "tan" }}
+                  ></div>
+                  <div
+                    className={cx("color")}
+                    style={{ backgroundColor: "green" }}
+                  ></div>
+                  <div
+                    className={cx("color")}
+                    style={{ backgroundColor: "black" }}
+                  ></div>
+                </div>
+              </div>
+              <div className={cx("actions")}>
+                <div className={cx("quan")}>
+                  <Remove
+                    onClick={() => {
+                      if (quanlity > 1) {
+                        setQuanlity(quanlity - 1);
+                      }
+                    }}
+                  />
+                  <span>{quanlity}</span>
+                  <Add onClick={() => setQuanlity(quanlity + 1)} />
+                </div>
+                <button className={cx("addBtn")} onClick={addProduct}>
+                  ADD TO CART
+                </button>
+              </div>
             </div>
           </div>
-          <div className={cx("actions")}>
-            <div className={cx("quan")}>
-              <Remove
-                onClick={() => {
-                  if (quanlity > 1) {
-                    setQuanlity(quanlity - 1);
-                  }
-                }}
-              />
-              <span>{quanlity}</span>
-              <Add onClick={() => setQuanlity(quanlity + 1)} />
-            </div>
-            <button className={cx("addBtn")} onClick={addProduct}>
-              ADD TO CART
-            </button>
-          </div>
+          <Newsletter />
+          <Footer />
         </div>
       </div>
-      <Newsletter />
-      <Footer />
-    </div>
+    </>
   );
 }
 
